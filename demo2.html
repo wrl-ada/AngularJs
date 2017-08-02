@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/angular.min.js"></script>
+		<script>
+			//module 模块
+			//第一个参数：模块名称  第二个参数：当前模块依赖列表 组合 有利于代码重用
+			var app = angular.module('myApp', []);
+			app.controller('myCtrl', function($scope) {
+				$scope.uname = "John";
+			});
+		</script>
+	</head>
+	<!--<body ng-app ng-init="uname='zhangsan'">
+		<span>{{uname}}</span>
+	</body>-->
+
+	<body ng-app="myApp" ng-controller="myCtrl">
+		<span>{{uname}}</span>
+	</body>
+
+</html>
