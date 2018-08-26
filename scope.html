@@ -1,0 +1,31 @@
+<!--
+	作者：1729087168@qq.com
+	时间：2018-08-19
+	描述：作用域
+-->
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/angular.min.js"></script>
+		<script type="text/javascript" src="js/scope.js"></script>
+	</head>
+	<!--<body ng-app ng-init="uname='zhangsan'">
+		<span>{{uname}}</span>
+	</body>-->
+	<!--子div获取值时先从自身的scope获取，如果没有获取到则去找父div的scope，依旧没找到时会去找rootScope-->
+	<body ng-app="myApp">
+		<div ng-controller="myCtrl">
+			<h1>{{$parent.uname}}</h1>
+			<div ng-controller="myCtrl1">
+				<span>{{uname}}</span>
+			</div>
+		</div>
+		<div ng-controller="age">
+			<h1>{{uname}}</h1>
+		</div>
+	</body>
+
+</html>

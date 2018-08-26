@@ -1,0 +1,9 @@
+//避免使用全局变量
+angular.module('myApp',[])
+	.controller("myCtrl",function($scope){
+		$scope.uname="test";
+	})
+	.controller("age",function($scope){
+		$scope.age=12;
+	});
+angular.bootstrap(aaa,'myApp');

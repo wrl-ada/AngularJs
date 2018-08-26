@@ -1,0 +1,35 @@
+<!--
+	作者：1729087168@qq.com
+	时间：2018-08-19
+	描述：过滤器，及自定义过滤器
+-->
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/angular.min.js"></script>
+		<script type="text/javascript" src="js/filter.js"></script>
+	</head>
+	<body ng-app="myApp">
+		<div ng-controller="filter">
+			<h1>{{money | currency:"￥"}}</h1>
+			<h1>{{money | myFilter:"元"}}</h1>
+			<h1>{{date | date:"yyyy年MM月dd"}}</h1>
+			<input ng-model="condition"/>
+			<div ng-repeat="user in (users | filter:condition)">
+				{{user.name}}-{{user.age}}
+			</div>
+			<h1>字段过滤</h1>
+			<input ng-model="cond_name"/>
+			<div ng-repeat="user in (users | filter:{name:cond_name})">
+				{{user.name}}-{{user.age}}
+			</div>
+			<h1>方法过滤</h1>
+			<div ng-repeat="user in (users | filter:func)">
+				{{user.name}}-{{user.age}}
+			</div>
+		</div>
+	</body>
+</html>

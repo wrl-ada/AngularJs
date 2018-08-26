@@ -1,0 +1,35 @@
+<!--
+	作者：1729087168@qq.com
+	时间：2018-08-19
+	描述：作用域的使用，及指令ng-repeat的使用
+-->
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/angular.min.js"></script>
+		<script type="text/javascript" src="js/list.js"></script>
+	</head>
+	<body ng-app="myApp">
+		<table border="1px" ng-controller="list">
+			<tr>
+				<td>id</td>
+				<td>name</td>
+				<td>age</td>
+				<td>index</td>
+				<td>action</td>
+			</tr>
+			<tr ng-repeat="user in users">
+				<td>{{user.id}}</td>
+				<td>{{user.name}}</td>
+				<td>{{user.age}}</td>
+				<td>{{$index}}</td>
+				<td>
+					<button ng-click="delete($index);">delete</button>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

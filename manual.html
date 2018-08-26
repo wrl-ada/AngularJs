@@ -1,0 +1,28 @@
+
+<!--
+	作者：1729087168@qq.com
+	时间：2018-08-19
+	描述：手动加载模块
+--><!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/angular.min.js"></script>
+		<script type="text/javascript" src="js/app.js"></script>
+	</head>
+	<!--<body ng-app ng-init="uname='zhangsan'">
+		<span>{{uname}}</span>
+	</body>-->
+
+	<body ng-app="myApp">
+		<div ng-controller="myCtrl">
+			<h1>{{uname}}</h1>
+		</div>
+		<div ng-controller="age">
+			<h1>{{age}}</h1>
+		</div>
+	</body>
+
+</html>
